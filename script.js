@@ -7,13 +7,16 @@ console.log("hello");
 btnSubmit.addEventListener("click", btnSubmitHandler);
 
 function btnSubmitHandler() {
-	var iniPrice = Number(initialPrice.value);
-	var currPrice = Number(currentPrice.value);
-	var noStocks = Number(noOfStocks.value);
+	var iniPrice = initialPrice.value;
+	var currPrice = currentPrice.value;
+	var noStocks = noOfStocks.value;
 	if (iniPrice == "" || currPrice == "" || noOfStocks == "") {
 		alert("enter All the values");
 		return;
 	}
+	iniPrice = Number(iniPrice);
+	currPrice = Number(currPrice);
+	noStocks = Number(noStocks);
 	if (noStocks < 0) {
 		alert("quantity of stocks should be greater than 0");
 		return;
@@ -31,7 +34,10 @@ function btnSubmitHandler() {
 		var loss = (iniPrice - currPrice) * noStocks;
 		var lossPercentage = (loss / iniPrice) * 100;
 		message.innerHTML =
-			"Your loss is : " + loss + " your loss percentage is : " + lossPercentage;
+			"Your loss is : " +
+			loss +
+			" your loss percentage is : " +
+			lossPercentage.toFixed(2);
 		message.style.backgroundColor = "red";
 		message.style.border = "1px solid black";
 		message.style.padding = "1rem";
@@ -44,7 +50,7 @@ function btnSubmitHandler() {
 			"Your profit is : " +
 			profit +
 			" your profit percentage is : " +
-			profitPercentage;
+			profitPercentage.toFixed(2);
 		message.style.backgroundColor = "green";
 		message.style.border = "1px solid black";
 		message.style.padding = "1rem";

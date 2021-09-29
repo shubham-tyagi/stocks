@@ -23,6 +23,7 @@ label {
 	margin: 0rem auto;
 	margin-top: 10%;
 	border-radius: 1rem;
+	font-weight: bold;
 }
 .main input {
 	display: inline-block;
