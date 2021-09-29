@@ -30,7 +30,7 @@ function btnSubmitHandler() {
 		return;
 	}
 	console.log(typeof iniPrice);
-	if (iniPrice > currPrice) {
+	if (iniPrice > currPrice && noStocks > 0) {
 		var loss = (iniPrice - currPrice) * noStocks;
 		var lossPercentage = (loss / iniPrice) * 100;
 		message.innerHTML =
@@ -42,7 +42,7 @@ function btnSubmitHandler() {
 		message.style.border = "1px solid black";
 		message.style.padding = "1rem";
 		message.style.borderRadius = "1rem";
-	} else if (currPrice > iniPrice) {
+	} else if (currPrice > iniPrice && noStocks > 0) {
 		var profit = (currPrice - iniPrice) * noStocks;
 		var profitPercentage = (profit / iniPrice) * 100;
 		// console.log(profitPercentage);
