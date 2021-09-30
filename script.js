@@ -32,7 +32,7 @@ function btnSubmitHandler() {
 	console.log(typeof iniPrice);
 	if (iniPrice > currPrice && noStocks > 0) {
 		var loss = (iniPrice - currPrice) * noStocks;
-		var lossPercentage = (loss / iniPrice) * 100;
+		var lossPercentage = (loss / (iniPrice * noStocks)) * 100;
 		message.innerHTML =
 			"Your loss is : " +
 			loss +
@@ -44,7 +44,7 @@ function btnSubmitHandler() {
 		message.style.borderRadius = "1rem";
 	} else if (currPrice > iniPrice && noStocks > 0) {
 		var profit = (currPrice - iniPrice) * noStocks;
-		var profitPercentage = (profit / iniPrice) * 100;
+		var profitPercentage = (profit / (iniPrice * noStocks)) * 100;
 		// console.log(profitPercentage);
 		message.innerHTML =
 			"Your profit is : " +
